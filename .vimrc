@@ -5,8 +5,10 @@ set nocompatible
 set backspace=indent,eol,start
 set nobackup
 set nowrap
+set hls
 set title
-set titlestring=\%f\ \(vim\) titlelen=70
+"set titlestring=\%f\ \(vim\) titlelen=70
+au BufReadPost *.do set syntax=tcl
 
 set listchars=tab:\|.,trail:.
 set tabstop=4
@@ -20,4 +22,4 @@ set backupdir=~/.vimbkp//
 set dir=~/.vimswp//
 
 map <F8> :set hls!<CR>
-map <F12> :q!<CR>
+"map <F12> :q!<CR>
