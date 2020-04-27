@@ -1,0 +1,18 @@
+#!/bin/sh
+exec tail -n +3 $0
+# This file provides an easy way to add custom menu entries.  Simply type the
+# menu entries you want to add after this comment.  Be careful not to change
+# the 'exec tail' line above.
+
+menuentry "Ubuntu 20.04 Installer" {
+         set isofile="/ubuntu-20.04-desktop-amd64.iso"
+         loopback loop (hd1,3)$isofile
+         linux (loop)/casper/vmlinuz boot=casper iso-scan/filename=$isofile noprompt noeject
+         initrd (loop)/casper/initrd
+ }
+menuentry "Ubuntu MATE 20.04 Installer" {
+         set isofile="/ubuntu-mate-20.04-desktop-amd64.iso"
+         loopback loop (hd1,3)$isofile
+         linux (loop)/casper/vmlinuz boot=casper iso-scan/filename=$isofile noprompt noeject
+         initrd (loop)/casper/initrd
+ }
